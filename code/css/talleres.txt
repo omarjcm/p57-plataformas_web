@@ -1,0 +1,4 @@
+
+- taller_08 -> posicionamiento - absoluto
+- taller_09 -> posicionamiento - caja
+- taller_10 -> posicionamiento de selectores
