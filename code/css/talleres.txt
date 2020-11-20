@@ -2,3 +2,7 @@
 - taller_08 -> posicionamiento - absoluto
 - taller_09 -> posicionamiento - caja
 - taller_10 -> posicionamiento de selectores
+- taller_11 -> posicionamiento - relative
+- taller_12 -> posicionamiento - fixed
+- taller_13 -> posicionamiento - estático
+- taller_14 -> posicionamiento - float (I)
