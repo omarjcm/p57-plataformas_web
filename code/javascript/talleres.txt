@@ -1,0 +1,6 @@
+taller_01 -> Tipos de datos
+taller_02 -> Objetos
+taller_03 -> Funciones
+taller_04 -> Lista de objetos y funciones: map, filter, find, some, foreach
+taller_05 -> arreglos / listas
+taller_06 -> Objetos - avanzados.
