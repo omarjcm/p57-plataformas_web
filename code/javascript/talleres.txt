@@ -4,3 +4,7 @@ taller_03 -> Funciones
 taller_04 -> Lista de objetos y funciones: map, filter, find, some, foreach
 taller_05 -> arreglos / listas
 taller_06 -> Objetos - avanzados.
+taller_07 -> Alcance de las variables.
+taller_08 -> Bucle while / Funciones tipo flecha.
+taller_09 -> Var o Let entre archivos js
+taller_09 -> do_while
