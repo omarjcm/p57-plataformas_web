@@ -16,4 +16,5 @@ taller_15 -> Funciones como parámetros.
 
 ASINCRONISMO 
 
-taller_16 -> 
+taller_16 -> Nociones de Asincronismo.
+taller_17 -> Funciones tipo callback + Asincronismo.
