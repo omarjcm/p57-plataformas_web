@@ -19,7 +19,7 @@ function adios( nombre ) {
 function hablar( nombre ) {
     return new Promise((resolve, reject) => {
         setTimeout(function() {
-            console.log( 'Bla bla bla bla bla...' )
+            console.log( `${nombre} dice bla bla bla bla bla...` )
             resolve( nombre )
         }, 1000)
     })
@@ -28,6 +28,8 @@ function hablar( nombre ) {
 
 console.log( 'Inicializando una conversación.' )
 hola('Guillermo')
+    .then( hablar )
+    .then( hablar )
     .then( hablar )
     .then( hablar )
     .then( hablar )

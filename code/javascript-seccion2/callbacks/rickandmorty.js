@@ -33,6 +33,13 @@ const invocacionSincronica = function(error, data) {
             if (error3)
                 return console.error( error3 )
             console.log( data3.name )
+
+            fetchData( API + data.results[2].id, function(error4, data4) {
+                if (error4)
+                    return console.error( error4 )
+                 
+                    console.log( data4.name )
+            })
         })
     })
 }
