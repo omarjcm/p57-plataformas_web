@@ -1,5 +1,5 @@
 const use = require('./network')
-const { rejects } = require('assert')
+const storage = require('./storage')
 
 function addUsuario(usuario, nombre, apellido, correo) {
     return new Promise( (resolve, reject) => {
@@ -7,6 +7,7 @@ function addUsuario(usuario, nombre, apellido, correo) {
             console.error('[MensajeControlado] No hay usuario.')
             return reject('No existe usuario.')
         }
+        // Se crea un objeto usuario
         const fullUsuario = {
             usuario: usuario,
             nombre: nombre,
@@ -14,10 +15,18 @@ function addUsuario(usuario, nombre, apellido, correo) {
             correo: correo
         }
         console.log( fullUsuario )
+        storage.add( fullUsuario )
         return resolve( fullUsuario )
+    })
+}
+
+function getUsuarios() {
+    return new Promise((resolve, reject) => {
+        resolve( storage.list() )
     })
 }
 
 module.exports = {
     addUsuario,
+    getUsuarios,
 }
