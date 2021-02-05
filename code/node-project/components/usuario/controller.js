@@ -23,13 +23,44 @@ function addUsuario(usuario, clave, nombre, apellido, correo, fecha_nacimiento) 
     })
 }
 
+function updateUsuario(id_usuario, usuario, clave, nombre, apellido, correo, fecha_nacimiento) {
+    return new Promise( async (resolve, reject) => {
+        if (!id_usuario) {
+            reject(  'No existe ID.' )
+        }
+        const fullUsuario = {
+            usuario: usuario,
+            clave: clave,
+            nombre: nombre,
+            apellido: apellido,
+            correo: correo,
+            fecha_nacimiento: fecha_nacimiento,
+        }
+        const result = await storage.update( id_usuario, fullUsuario )
+        resolve( result )
+    } )
+}
+
 function getUsuarios() {
     return new Promise((resolve, reject) => {
         resolve( storage.list() )
     })
 }
 
+function deleteUsuario(id_usuario) {
+    return new Promise( (resolve, reject) => {
+        if (!id_usuario) {
+            reject('No existe usuario.')
+        }
+        storage.remove(id_usuario)
+            .then((data) => resolve(data))
+            .catch((error) => reject(error))
+    } )
+}
+
 module.exports = {
     addUsuario,
     getUsuarios,
+    updateUsuario,
+    deleteUsuario,
 }
