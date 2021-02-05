@@ -19,7 +19,7 @@ function addUsuario( usuario ) {
 
 async function getUsuarios() {
     const objetos = await Model.find()
-    return list
+    return objetos
 }
 
 module.exports = {
