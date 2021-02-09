@@ -31,6 +31,7 @@ async function updateUsuario(id_usuario, usuario) {
         foundUsuario.nombre = usuario.nombre
         foundUsuario.apellido = usuario.apellido
         foundUsuario.correo = usuario.correo
+        foundUsuario.tipo_usuario = usuario.tipo_usuario
         foundUsuario.fecha_nacimiento = usuario.fecha_nacimiento
         
         const newUsuario = await foundUsuario.save()

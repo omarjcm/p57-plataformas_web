@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', function(req, res) {
-    controller.addUsuario(req.body.usuario, req.body.clave, req.body.nombre, req.body.apellido, req.body.correo, req.body.fecha_nacimiento)
+    controller.addUsuario(req.body.usuario, req.body.clave, req.body.nombre, req.body.apellido, req.body.correo, req.body.tipo_usuario, req.body.carrera, req.body.fecha_nacimiento)
         .then((data) => {
             response.success(req, res, data, 201)
         })
@@ -26,7 +26,7 @@ router.post('/', function(req, res) {
 })
 
 router.patch('/:id', function(req, res) {
-    controller.updateUsuario(req.params.id, req.body.usuario, req.body.clave, req.body.nombre, req.body.apellido, req.body.correo, req.body.fecha_nacimiento)
+    controller.updateUsuario(req.params.id, req.body.usuario, req.body.clave, req.body.nombre, req.body.apellido, req.body.correo, req.body.tipo_usuario, req.body.carrera, req.body.fecha_nacimiento)
         .then((data) => {
             response.success(req, res, data, 200)
         })

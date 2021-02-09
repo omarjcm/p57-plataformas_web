@@ -1,7 +1,7 @@
 const use = require('./network')
 const storage = require('./storage')
 
-function addUsuario(usuario, clave, nombre, apellido, correo, fecha_nacimiento) {
+function addUsuario(usuario, clave, nombre, apellido, correo, tipo_usuario, id_carrera, fecha_nacimiento) {
     return new Promise( (resolve, reject) => {
         if (!usuario) {
             console.error('[MensajeControlado] No hay usuario.')
@@ -14,6 +14,8 @@ function addUsuario(usuario, clave, nombre, apellido, correo, fecha_nacimiento) 
             nombre: nombre,
             apellido: apellido,
             correo: correo,
+            tipo_usuario: tipo_usuario,
+            carrera: id_carrera,
             fecha_creacion: new Date(),
             fecha_nacimiento: fecha_nacimiento,
         }
@@ -23,7 +25,7 @@ function addUsuario(usuario, clave, nombre, apellido, correo, fecha_nacimiento) 
     })
 }
 
-function updateUsuario(id_usuario, usuario, clave, nombre, apellido, correo, fecha_nacimiento) {
+function updateUsuario(id_usuario, usuario, clave, nombre, apellido, correo, tipo_usuario, fecha_nacimiento) {
     return new Promise( async (resolve, reject) => {
         if (!id_usuario) {
             reject(  'No existe ID.' )
@@ -34,6 +36,8 @@ function updateUsuario(id_usuario, usuario, clave, nombre, apellido, correo, fec
             nombre: nombre,
             apellido: apellido,
             correo: correo,
+            carrera: id_carrera,
+            tipo_usuario: tipo_usuario,
             fecha_nacimiento: fecha_nacimiento,
         }
         const result = await storage.update( id_usuario, fullUsuario )

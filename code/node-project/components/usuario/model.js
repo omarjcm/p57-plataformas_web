@@ -26,6 +26,15 @@ const mySchema = new Schema({
         type: Date,
         required: true,
     },
+    tipo_usuario: {
+        type: String,
+        required: true,
+    },
+    carrera: {
+        type: Schema.ObjectId,
+        ref: 'Carrera',
+    },
+    fecha_creacion: Date,
     fecha_nacimiento: Date,
 })
 
