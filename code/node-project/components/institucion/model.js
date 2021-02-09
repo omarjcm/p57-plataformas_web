@@ -2,23 +2,19 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const mySchema = new Schema({
-    usuario: {
-        type: String,
-        required: true,
-    },
-    clave: {
-        type: String,
-        required: true,
-    },
     nombre: {
         type: String,
         required: true,
     },
-    apellido: {
+    domicilio: {
         type: String,
         required: true,
     },
-    correo: {
+    telefono: {
+        type: String,
+        required: true,
+    },
+    tipo_institucion: {
         type: String,
         required: true,
     },
@@ -26,16 +22,11 @@ const mySchema = new Schema({
         type: Date,
         required: true,
     },
-    tipo_usuario: {
-        type: String,
-        required: true,
-    },
-    carrera: {
+    representante_legal: {
         type: Schema.ObjectId,
-        ref: 'Carrera',
+        ref: 'Representante_Legal',
     },
-    fecha_nacimiento: Date,
 })
 
-const model = mongoose.model('Usuario', mySchema)
+const model = mongoose.model('Institucion', mySchema)
 module.exports = model
