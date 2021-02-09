@@ -17,9 +17,22 @@ function addUsuario( usuario ) {
     objeto.save()
 }
 
-async function getUsuarios() {
-    const objetos = await Model.find()
-    return objetos
+function getUsuarios( filtroUsuario ) {
+    return new Promise((resolve, reject) => {
+        let filtro = {}
+        if (filtroUsuario != null) {
+            filtro = { usuario: filtroUsuario }
+        }
+        Model.find( filtro )
+            .populate( 'carrera' )
+            .exec( (error, populated) => {
+                if (error) {
+                    reject( error )
+                    return false
+                }
+                resolve( populated )
+            } )
+    })
 }
 
 async function updateUsuario(id_usuario, usuario) {
